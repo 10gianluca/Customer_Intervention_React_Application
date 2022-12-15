@@ -1,8 +1,10 @@
 import styles from "../style.module.css";
+import React, { useState, useEffect, Component } from "react";
 import shortid from 'shortid'
 import axios from 'axios'
-import React, { Component } from 'react';
 import password from "./password";
+import email from "./email";
+
 class Form extends Component {    
     constructor(props){
         super(props)
@@ -18,15 +20,20 @@ class Form extends Component {
     }
     submitHandler = e => {
         e.preventDefault()
-        console.log(this.state)
-        axios
-            .post('/swagger-ui/index.html#/Authentication', this.state)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
+        console.log(`https://java-api.codeboxxtest.xyz/authenticate?email=${this.state.email}&password=${this.state.password}`)
+        var x = "";
+        axios.post(`/authenticate?email=${this.state.email}&password=${this.state.password}`)
+            .then(result => {
+                console.log(`https://java-api.codeboxxtest.xyz/authenticate?email=${email}&password=${password}`)
+                x = result.data["access_token"]
+                console.log("result: " + x)
+                localStorage.setItem("user-info", JSON.stringify(x))
+    
+            }).catch((error) => {
                 console.log(error)
+                alert("Invalid Login")
             })
+            console.log(x)
     }
     render(){
         const {email, password} = this.state

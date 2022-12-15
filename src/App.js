@@ -1,5 +1,9 @@
 import Header from "./components/Header";
 import Form from "./components/Form"
+import Home from "./components/Home"
+import Login from "./components/Login"
+import NewIntervention from "./components/NewIntervention"
+
 import emailList from "./components/emailList";
 import passwordList from "./components/passwordList";
 import { useState } from "react";
@@ -11,19 +15,9 @@ function App() {
   return( 
     <div className="App">
       <Header></Header>
-      <Form 
-        email={email} 
-        setemail={setemail}
-        emailList={emailList} 
-        setemailList={setemailList}
-        password={password} 
-        setpassword={setpassword}
-        passwordList={passwordList} 
-        setpasswordList={setpasswordList}
-      ></Form>
-      <emailList emailList={emailList}/>
-      <passwordList passwordList={passwordList}/>
-      
+      <Home/>
+      <NewIntervention/>
+      <Login/>
     </div>
   );
 }
