@@ -1,11 +1,11 @@
 import styles from "../style.module.css";
-const Todo=({todoItem})=>{
+const email=({emailItem})=>{
     return(<div>
-        <div className={styles.todoItem}>
-            <h3 className={styles.todoname}>{todoItem.name}</h3>
+        <div className={styles.emailItem}>
+            <h3 className={styles.emailname}>{emailItem.name}</h3>
             <button className={styles.deletebutton}>Done</button>
         </div>
     </div>
     );
 };
-export default Todo;
+export default email;

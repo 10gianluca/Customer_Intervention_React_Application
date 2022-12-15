@@ -15,13 +15,13 @@ body{
     margin: auto;
     display: block;
 }
-.todoform{
+.form{
     width: 100%;
     margin: auto;
     margin-top: 20px;
 }
 
-.todoinput{
+.emailinput{
     width: 100%;
     border: none;
     border-bottom: 1px solid whitesmoke;
@@ -29,7 +29,7 @@ body{
     text-align: center;
     height: 50px;
 }
-.todobutton{
+.emailbutton{
     width: 100%;
     border: none;
     height: 50px;
@@ -38,14 +38,35 @@ body{
     color: white;
     margin-top: 20px;
 }
-.todoItem{
+.emailItem{
     margin: auto;
     border: 2px solid whitesmoke;
     padding: 20px;
     margin-top: 20px;
 }
-.todoname{
 
+.passwordinput{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    font-size:1.5em;
+    text-align: center;
+    height: 50px;
+}
+.passwordbutton{
+    width: 100%;
+    border: none;
+    height: 50px;
+    background-color: rgb(29, 66, 177);
+    font-size:1.2em;
+    color: white;
+    margin-top: 20px;
+}
+.passwordItem{
+    margin: auto;
+    border: 2px solid whitesmoke;
+    padding: 20px;
+    margin-top: 20px;
 }
 .deletebutton{
     width: 100px;

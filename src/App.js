@@ -1,20 +1,28 @@
 import Header from "./components/Header";
 import Form from "./components/Form"
-import TodoList from "./components/TodoList";
+import emailList from "./components/emailList";
+import passwordList from "./components/passwordList";
 import { useState } from "react";
 function App() {
-  const [todo,setTodo] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [email,setemail] = useState("");
+  const [emailList, setemailList] = useState([]);
+  const [password,setpassword] = useState("");
+  const [passwordList, setpasswordList] = useState([]);
   return( 
     <div className="App">
       <Header></Header>
       <Form 
-        todo={todo} 
-        setTodo={setTodo}
-        todoList={todoList} 
-        setTodoList={setTodoList}
+        email={email} 
+        setemail={setemail}
+        emailList={emailList} 
+        setemailList={setemailList}
+        password={password} 
+        setpassword={setpassword}
+        passwordList={passwordList} 
+        setpasswordList={setpasswordList}
       ></Form>
-      <TodoList todoList={todoList}/>
+      <emailList emailList={emailList}/>
+      <passwordList passwordList={passwordList}/>
       
     </div>
   );
