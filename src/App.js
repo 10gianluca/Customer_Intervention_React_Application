@@ -1,24 +1,26 @@
-import Header from "./components/Header";
-import Form from "./components/Form"
-import Home from "./components/Home"
-import Login from "./components/Login"
-import NewIntervention from "./components/NewIntervention"
+import React from "react";
+import { Route, Routes, Link } from "react-router-dom";
+import styles from "./style.module.css";
+import './style.module.css';
+import Home from "./components/Home";
+import Login from "./components/Login";
+import NewIntervention from "./components/NewIntervention";
 
-import emailList from "./components/emailList";
-import passwordList from "./components/passwordList";
-import { useState } from "react";
 function App() {
-  const [email,setemail] = useState("");
-  const [emailList, setemailList] = useState([]);
-  const [password,setpassword] = useState("");
-  const [passwordList, setpasswordList] = useState([]);
   return( 
-    <div className="App">
-      <Header></Header>
-      <Home/>
-      <NewIntervention/>
-      <Login/>
-    </div>
+    <>
+    <nav>
+        <div> 
+          <h1 className={styles.header}></h1>
+          <img className={styles.logo} src="/images/R2.png"/>
+        </div>
+    </nav>
+    <Routes>
+      <Route   path="/" element={<Login />} />
+      <Route   path="/home" element={<Home />} />
+      <Route  path="/int" element={<NewIntervention />} />
+    </Routes>
+    </>
   );
 }
 

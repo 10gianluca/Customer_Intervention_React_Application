@@ -3,17 +3,21 @@ body{
     font-family: sans-serif;
 }
 .header{
-    background-color: rgb(29, 66, 177);
+    background-color: rgba(29, 66, 177, 0.464);
     height: 50px;
     font-size:3em;
     color: rgb(108, 1, 1);
     padding: 20px;
-    text-align: center;
+    text-align: right;
 }
 .logo{
     height: 100px;
     margin: auto;
-    display: block;
+    display: flex;
+    position: absolute;
+    top: 3%;
+    left:43%;
+    
 }
 .form{
     width: 100%;
