@@ -1,6 +1,8 @@
 import styles from "../style.module.css";
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const NewIntervention = (props) => {
   const [customerID, setCustomerID] = useState("");
@@ -11,6 +13,8 @@ const NewIntervention = (props) => {
   const [report, setReport] = useState("");
   const [body, setBody] = useState("");
   const token = localStorage.getItem("token");
+  const navigate = useNavigate();
+
 
     const changeHandler = (e) => {
 
@@ -57,20 +61,22 @@ const NewIntervention = (props) => {
                   console.log(JSON.stringify(response.data));
                   setBody(response.data)
                   console.log(body)
+                  navigate('/Home')
+
                 })
                 .catch(function (error) {
                   console.log(error);
                 });
             }
     return (
-        <div className={styles.form}>
+        <div className={styles.form2}>
           <form onSubmit={handleSubmit}>
             <input
               value={customerID}
               name="customerID"
               type="number"
               onChange={changeHandler}
-              className={styles.input}
+              className={styles.input2}
               placeholder="customerID"
             ></input>
             <input
@@ -78,14 +84,14 @@ const NewIntervention = (props) => {
               name="buildingID"
               type="number"
               onChange={changeHandler}
-              className={styles.input}
+              className={styles.input2}
               placeholder="buildingID"
             ></input>
             <input
               value={batteryID}
               name="batteryID"
               type="number"
-              className={styles.input}
+              className={styles.input2}
               onChange={changeHandler}
               placeholder="batteryID"
             ></input>
@@ -93,7 +99,7 @@ const NewIntervention = (props) => {
               value={columnID}
               name="columnID"
               type="number"
-              className={styles.input}
+              className={styles.input2}
               onChange={changeHandler}
               placeholder="columnID"
             ></input>
@@ -101,7 +107,7 @@ const NewIntervention = (props) => {
               value={elevatorID}
               name="elevatorID"
               type="number"
-              className={styles.input}
+              className={styles.input2}
               onChange={changeHandler}
               placeholder="elevatorID"
             ></input>
@@ -109,15 +115,15 @@ const NewIntervention = (props) => {
               value={report}
               name="report"
               type="string"
-              className={styles.input}
+              className={styles.input2}
               onChange={changeHandler}
               placeholder="report"
             ></input>
-            <button type="submit" className={styles.emailbutton}>
-              Login
+            <button type="submit" className={styles.submitbutton2}>
+              Submit
             </button>
           </form>
-          <pre>{JSON.stringify(body, null, 2)}</pre>
+          <pre className={styles.list2}>{JSON.stringify(body, null, 2)}</pre>
         </div>);}
 export default NewIntervention;
     

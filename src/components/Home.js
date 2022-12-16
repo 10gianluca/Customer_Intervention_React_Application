@@ -34,10 +34,10 @@ const Home = (props) => {
   };
   return(
     <div className={styles.form}>
-      <h1>List Of Interventions</h1>
-      <button onClick={submitHandler}>Get List Of Interventions</button>
-      <button onClick={newInter}>New Intervention</button>
-      <pre>{JSON.stringify(body, null, 2)}</pre>
+      <h1 className={styles.intHead}>List Of Interventions</h1>
+      <button className={styles.listBut} onClick={submitHandler}>Get List Of Interventions</button>
+      <button className={styles.newBut} onClick={newInter}>New Intervention</button>
+      <pre className={styles.list}>{JSON.stringify(body, null, 2)}</pre>
 
     </div>
   );

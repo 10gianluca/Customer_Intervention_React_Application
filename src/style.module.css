@@ -1,3 +1,4 @@
+
 body{
     margin: 0;
     font-family: sans-serif;
@@ -44,7 +45,7 @@ body{
     position: absolute;
     top: 30%;
     left: 25%;
-    width: 642px;
+    width: 50%;
     border: none;
     border: 1px solid rgb(0, 4, 109);
     height: 50px;
@@ -88,3 +89,72 @@ body{
     padding: 20px;
     margin-top: 20px;
 }
+.intHead{
+    position: relative;
+    color: rgb(255, 0, 0);
+    font-size: 50px;
+    left: 35%;
+}
+.listBut{
+    position: relative;
+    left: 33%;
+    width:14%;
+    background-color: #070089;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+}
+.newBut{
+    position: relative;
+    left: 34%;
+    width:14%;
+    border: none;
+    background-color: #a70000;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+.list{
+    color:white;
+}
+.list2{
+    color:white;
+    position: absolute;
+    left: -29%;
+    top: 100%;
+}
+.form2 {
+    position: relative;
+    left: 30%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+  }
+  
+  .input2 {
+    height: 50px;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 50px;
+  }
+  
+  .submitbutton2 {
+    height: 50px;
+    width: 100%;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
