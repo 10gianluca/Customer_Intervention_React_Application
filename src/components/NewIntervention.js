@@ -10,6 +10,7 @@ const NewIntervention = (props) => {
   const [elevatorID, setElevatorID] = useState("");
   const [report, setReport] = useState("");
   const [body, setBody] = useState("");
+  const token = localStorage.getItem("token");
 
     const changeHandler = (e) => {
 
@@ -30,34 +31,44 @@ const NewIntervention = (props) => {
         }
       };
       const handleSubmit = async (e) => {
-        e.preventDefault();
-            axios.post(
-            "/interventions/new",
-            {
-              customerID: customerID,
-              buildingID: buildingID,
-              batteryID: batteryID,
-              columnID: columnID,
-              elevatorID: elevatorID,
-              report: report,
+        console.log(token);
+            e.preventDefault();
+            const data = {
+                "customerID": customerID,
+                "buildingID": buildingID,
+                "batteryID": batteryID,
+                "columnID": columnID,
+                "elevatorID": elevatorID,
+                "report": report
+              };
+              
+              const config = {
+                method: 'post',
+                url: '/interventions/new',
+                headers: {
+                    'Authorization': `Bearer ${token} `,
+                    'Accept': 'application/json'
+                  },
+                data,
+              };
+              
+              axios(config)
+                .then(function (response) {
+                  console.log(JSON.stringify(response.data));
+                  setBody(response.data)
+                  console.log(body)
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
             }
-          )
-          .then(function (response) {
-            console.log(JSON.stringify(response.data));
-            setBody(response.data)
-            console.log(body)
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
-        };
-
     return (
         <div className={styles.form}>
           <form onSubmit={handleSubmit}>
             <input
               value={customerID}
               name="customerID"
+              type="number"
               onChange={changeHandler}
               className={styles.input}
               placeholder="customerID"
@@ -65,6 +76,7 @@ const NewIntervention = (props) => {
             <input
               value={buildingID}
               name="buildingID"
+              type="number"
               onChange={changeHandler}
               className={styles.input}
               placeholder="buildingID"
@@ -72,6 +84,7 @@ const NewIntervention = (props) => {
             <input
               value={batteryID}
               name="batteryID"
+              type="number"
               className={styles.input}
               onChange={changeHandler}
               placeholder="batteryID"
@@ -79,6 +92,7 @@ const NewIntervention = (props) => {
             <input
               value={columnID}
               name="columnID"
+              type="number"
               className={styles.input}
               onChange={changeHandler}
               placeholder="columnID"
@@ -86,6 +100,7 @@ const NewIntervention = (props) => {
             <input
               value={elevatorID}
               name="elevatorID"
+              type="number"
               className={styles.input}
               onChange={changeHandler}
               placeholder="elevatorID"
@@ -93,6 +108,7 @@ const NewIntervention = (props) => {
             <input
               value={report}
               name="report"
+              type="string"
               className={styles.input}
               onChange={changeHandler}
               placeholder="report"
@@ -101,6 +117,7 @@ const NewIntervention = (props) => {
               Login
             </button>
           </form>
+          <pre>{JSON.stringify(body, null, 2)}</pre>
         </div>);}
 export default NewIntervention;
-
+    

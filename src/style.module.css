@@ -1,6 +1,7 @@
 body{
     margin: 0;
     font-family: sans-serif;
+    background-color: rgba(0, 0, 0, 0.807);
 }
 .header{
     background-color: rgba(29, 66, 177, 0.464);
@@ -24,22 +25,32 @@ body{
     margin: auto;
     margin-top: 20px;
 }
-
+::placeholder { 
+    color: rgb(0, 0, 0);
+  }
 .emailinput{
-    width: 100%;
+    position: relative;
+    left: 25%;
+    width: 50%;
     border: none;
-    border-bottom: 1px solid whitesmoke;
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgba(255, 0, 0, 0.595);
     font-size:1.5em;
+    color:rgb(79, 78, 155);
     text-align: center;
     height: 50px;
 }
 .emailbutton{
-    width: 100%;
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 642px;
     border: none;
+    border: 1px solid rgb(0, 4, 109);
     height: 50px;
-    background-color: rgb(29, 66, 177);
+    background-color: rgb(176, 7, 7);
     font-size:1.2em;
-    color: white;
+    color: rgb(0, 0, 0);
     margin-top: 20px;
 }
 .emailItem{
@@ -50,10 +61,15 @@ body{
 }
 
 .passwordinput{
-    width: 100%;
+    position: absolute;
+    top:25%;
+    left: 25%;
+    width: 50%;
     border: none;
-    border-bottom: 1px solid whitesmoke;
+    border: 1px solid rgb(0, 4, 109);
+    background-color: rgba(0, 0, 164, 0.595);
     font-size:1.5em;
+    color:rgb(255, 255, 255);
     text-align: center;
     height: 50px;
 }
@@ -63,7 +79,7 @@ body{
     height: 50px;
     background-color: rgb(29, 66, 177);
     font-size:1.2em;
-    color: white;
+    color: rgb(255, 0, 0);
     margin-top: 20px;
 }
 .passwordItem{
@@ -71,12 +87,4 @@ body{
     border: 2px solid whitesmoke;
     padding: 20px;
     margin-top: 20px;
-}
-.deletebutton{
-    width: 100px;
-    border: none;
-    height: 50px;
-    background-color: rgb(29, 66, 177);
-    color: white;
-    border-radius: 2px;
 }
