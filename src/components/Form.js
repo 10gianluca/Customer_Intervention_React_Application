@@ -2,20 +2,15 @@ import React from "react";
 import styles from "../style.module.css";
 
 import { useState } from "react";
-import shortid from "shortid";
 import axios from "axios";
-import password from "./password";
-import email from "./email";
 import { useNavigate } from "react-router-dom";
 
 const Form = (props) => {
-  // use the useState hook to initialize and manage state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const changeHandler = (e) => {
-    // update the state using the appropriate setter
-    // function based on the input field name
+
     if (e.target.name === "email") {
       setEmail(e.target.value);
     } else if (e.target.name === "password") {
@@ -36,9 +31,9 @@ const Form = (props) => {
         console.log(
           `https://java-api.codeboxxtest.xyz/authenticate?email=${email}&password=${password}`
         );
-        token = result.data["access_token"];
+        const token = String(result.data["access_token"]);
         console.log("result: " + token);
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("token", token);
         navigate('/home')
       })
       .catch((error) => {
@@ -48,7 +43,6 @@ const Form = (props) => {
     console.log(token);
   };
 
-  // return the JSX markup directly from the component body
   return (
     <div className={styles.form}>
       <form onSubmit={submitHandler}>
