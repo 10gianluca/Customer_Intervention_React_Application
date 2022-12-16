@@ -1,3 +1,7 @@
+# What This App Does
+
+This project allows an authenticated user to sign in with a token, with this token it allows them to view the list of interventions from a swagger api. They can also use this token and swagger api to create a new intervention that then shows up on the interventions list
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
